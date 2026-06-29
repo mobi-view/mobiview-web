@@ -1,0 +1,1015 @@
+
+ :root{
+    --yellow:#FFE600;
+    --black:#0A0A0A;
+    --dark:#111111;
+    --card-bg:#1A1A1A;
+    --border:#2A2A2A;
+    --text-muted:#888;
+    --Kyellow:#f7e337;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:var(--black); 
+    color:#E8E8E8;
+    overflow-x:hidden;
+    line-height:1.8;
+}
+nav{
+    background:var(--Kyellow);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 6%;
+   
+    position: relative;
+    z-index: 1000;
+}
+
+.logo{
+    width:130px;
+    height: auto;
+    object-fit:contain;
+    border-radius:20px;
+}
+
+.info ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+.info ul li{
+    font-family:'Tajawal',sans-serif;
+    font-size:1.1rem;
+    font-weight:600;
+    color:#000;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.info ul li:hover{
+    color:#444;
+    transform:translateY(-2px);
+}
+
+.contact{
+    background:#000;
+    color:var(--Kyellow);
+    padding:12px 28px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact:hover{
+    background:#222;
+    color:white;
+    transform:translateY(-3px);
+}
+
+.contact h2{
+    font-size:1rem;
+    letter-spacing:1px;
+}
+/* FIX 5: scope the black anchor color to avoid overriding dropdown links */
+nav a{
+    text-decoration: none;
+    color: black;
+}
+
+/* links outside nav (footer, etc.) */
+body > a,
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.line{
+    width: 100%;
+    height: 3px;
+    background: var(--yellow);
+}
+
+/* FIX 6: has-dropdown needs position:relative to anchor the dropdown panel */
+.has-dropdown {
+    position: relative;
+}
+
+.has-dropdown > span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* chevron */
+.has-dropdown > span::after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #111;
+    border-bottom: 2px solid #111;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .28s cubic-bezier(.4,0,.2,1);
+}
+
+.has-dropdown:hover > span::after,
+.has-dropdown:focus-within > span::after {
+    transform: rotate(-135deg) translateY(-2px);
+}
+
+/* ── DROPDOWN PANEL ── */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #141414;
+    border-radius: 4px;
+    min-width: 260px;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .26s cubic-bezier(.4,0,.2,1),
+                transform .26s cubic-bezier(.4,0,.2,1),
+                visibility .26s;
+    /* FIX 7: ensure dropdown z-index is above everything else */
+    z-index: 9999;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.06);
+    box-shadow: 0 20px 50px rgba(0,0,0,.55), 0 4px 12px rgba(0,0,0,.3);
+}
+
+/* yellow top bar */
+.dropdown::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: var(--Kyellow);
+}
+
+/* open state */
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ── HEADER inside dropdown ── */
+.dropdown-heading {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    padding: 22px 24px 16px;
+    letter-spacing: .01em;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+/* ── LINKS — FIX 8: override the global a{color:black} specifically here ── */
+.dropdown a {
+    display: block;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: #ccc !important;
+    text-align: center;
+    padding: 13px 28px;
+    text-decoration: none !important;
+    letter-spacing: .01em;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    transition: background .2s, color .2s, letter-spacing .2s;
+    position: relative;
+}
+
+.dropdown a:last-child {
+    border-bottom: none;
+}
+
+.dropdown a:hover {
+    background: rgba(247,227,55,.06);
+    color: var(--Kyellow) !important;
+    letter-spacing: .04em;
+}
+
+/* left accent bar on hover */
+.dropdown a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 3px;
+    background: var(--Kyellow);
+    border-radius: 0 3px 3px 0;
+    opacity: 0;
+    transform: scaleY(.4);
+    transition: opacity .2s, transform .2s;
+}
+
+.dropdown a:hover::before {
+    opacity: 1;
+    transform: scaleY(1);
+}
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+footer{
+    border-top:1px solid var(--border);
+    padding:32px;
+    text-align:center;
+    color:var(--text-muted);
+    font-size:.9rem;
+}
+
+footer strong{
+    color:var(--yellow);
+}
+
+.social-icons{
+    margin-top:12px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.social-icons a{
+    width:42px;
+    height:42px;
+    border:1px solid var(--Kyellow);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--yellow);
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#000;
+    color:#fff;
+    transform:translateY(-3px);
+    border-color: #000;
+}
+
+
+
+.whatsapp-float{
+    position:fixed;
+    right:30px;
+    bottom:30px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:12px 18px;
+
+    background:#111;
+    border:2px solid #F7C600;
+
+    color:#fff;
+    text-decoration:none;
+
+    border-radius:50px;
+
+    z-index:9999;
+
+   
+
+    transform:translateY(-120px);
+    opacity:0;
+
+    animation:slideDown .8s ease forwards;
+    transition:.35s;
+}
+
+@keyframes slideDown{
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+
+
+.whatsapp-float i{
+    font-size:34px;
+    color:#25D366;
+}
+
+.wa-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+}
+
+.wa-text span{
+    font-size:13px;
+    color:#F7C600;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+.wa-text small{
+    font-size:16px;
+    color:#fff;
+    font-weight:700;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .whatsapp-float{
+        right:18px;
+        bottom:18px;
+        padding:10px 14px;
+    }
+
+    .wa-text{
+        display:none; /* show only icon on phones */
+    }
+
+    .whatsapp-float i{
+        font-size:38px;
+    }
+}
+.info-section{
+
+    display: flex;
+    background:white;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+   
+}
+.info-section img{
+    width: 800px;
+    height: auto;
+    left: 50px;
+    
+    border-radius: 2rem;
+    display: flex;
+
+
+}
+.txt-section{
+    padding-left: 4rem;
+    color: black;
+    width: 800px;
+}
+.txt-section h2{
+
+    padding-bottom: 3rem;
+    font-size: xx-large;
+}
+.why{
+    display: flex;
+    height: 600px;
+    background: whitesmoke;
+    align-items: center;
+   justify-content: center;
+   direction: rtl;
+   gap: 50px;
+
+}
+.why img{
+    right: 30px;
+    width: 500px;
+    height: auto;
+    border-radius: 2rem;
+
+}
+.bottom-info{
+   direction: ltr;
+   color: #000;
+   padding-right: 10rem;
+}
+.bottom-info h2{
+    font-size: xx-large;
+    margin-bottom: 3rem;
+    
+}
+.bottom-info ul{
+    margin-left: 4rem;
+}
+.bottom-info ul li{
+    font-size: larger;
+}
+.ai{
+   display: flex;
+    height: 600px;
+    background: white;
+    align-items: center;
+   justify-content: center;
+   gap: 50px; 
+}
+.ai img{
+    right: 30px;
+    width: 700px;
+    height: auto;
+    border-radius: 2rem;
+
+}
+.bottom-section{
+
+     padding-left: 4rem;
+    color: black;
+    width: 800px;
+}
+.bottom-section p{
+    font-size: large;
+}
+.bottom-section h2{
+    margin-bottom: 3rem;
+    font-size: xx-large;
+}
+
+.call{
+    background: whitesmoke;
+     align-content: center;
+    justify-items: center;
+    height: 400px;
+}
+.call-bottom{
+    background: var(--yellow);
+    height: 300px;
+    width: 1200px;
+    align-content: center;
+    justify-items: center;
+    border-radius: 1rem;
+    
+}
+.call-bottom h2{
+    color: #000;
+    font-size:50px;
+}
+.call-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000;
+    height: 70px;
+    width: 140px;
+    margin-top: 1rem;
+
+    text-decoration: none; /* removes underline */
+}
+
+.call-contact h2 {
+    color: var(--yellow);
+    font-size: large;
+    margin: 0; /* remove default h2 margins */
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* =====================================================
+        PREMIUM MOBILE VERSION
+=====================================================*/
+
+.menu-btn,
+.mobile-menu{
+    display:none;
+}
+
+@media (max-width:900px){
+
+html,
+body{
+    overflow-x:hidden;
+}
+
+/*================ NAVBAR ================*/
+
+nav{
+
+    position:sticky;
+    top:0;
+    z-index:99999;
+
+    height:75px;
+
+    padding:0 22px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:var(--Kyellow);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.15);
+
+}
+
+.logo{
+    width:105px;
+    height:auto;
+}
+
+.info,
+.contact{
+    display:none;
+}
+
+.menu-btn{
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    width:48px;
+    height:48px;
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+
+    font-size:38px;
+
+    color:#111;
+}
+
+/*================ MOBILE MENU ================*/
+
+.mobile-menu{
+
+    display:flex;
+
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:100%;
+    height:100vh;
+
+    background:#080808;
+
+    flex-direction:column;
+
+    padding:110px 35px 40px;
+
+    transition:.45s ease;
+
+    z-index:999999;
+}
+
+.mobile-menu.open{
+    right:0;
+}
+
+.close-menu{
+
+    position:absolute;
+
+    right:25px;
+    top:22px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    background:none;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:42px;
+}
+
+.close-menu:hover{
+    color:var(--yellow);
+}
+
+.mobile-menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    margin-bottom:28px;
+
+    transition:.3s;
+
+    font-family:"Cairo";
+}
+
+.mobile-menu a:hover{
+
+    color:var(--yellow);
+
+    padding-left:14px;
+}
+
+.mobile-drop-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:30px;
+
+    cursor:pointer;
+}
+
+.mobile-drop-title span{
+
+    font-size:32px;
+}
+
+.mobile-submenu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-left:18px;
+
+    margin-top:-10px;
+
+    margin-bottom:22px;
+
+    animation:fade .3s ease;
+}
+
+.mobile-submenu a{
+
+    color:#bdbdbd!important;
+
+    font-size:20px!important;
+
+    margin-bottom:18px!important;
+}
+
+.mobile-submenu a:hover{
+
+    color:var(--yellow)!important;
+}
+
+.mobile-contact{
+
+    width:100%;
+
+    height:58px;
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#2454ff;
+
+    color:white!important;
+
+    border-radius:4px;
+
+    letter-spacing:3px;
+
+    font-size:17px!important;
+}
+
+/*================ HERO SECTION ================*/
+
+.info-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:55px 22px;
+
+    gap:35px;
+
+    height:auto;
+
+    text-align:center;
+}
+
+.info-section img{
+
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.txt-section{
+
+    width:100%;
+
+    padding:0;
+}
+
+.txt-section h2{
+
+    font-size:34px;
+
+    margin-bottom:22px;
+
+    line-height:1.25;
+}
+
+.txt-section p{
+
+    font-size:15px;
+
+    line-height:1.9;
+}
+
+/*================ WHY SECTION ================*/
+
+.why{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:55px 22px;
+
+    gap:35px;
+
+    height:auto;
+
+    direction:ltr;
+}
+
+.why img{
+
+    width:100%;
+
+    max-width:480px;
+
+    border-radius:20px;
+}
+
+.bottom-info{
+
+    width:100%;
+
+    padding:0;
+
+    text-align:left;
+}
+
+.bottom-info h2{
+
+    text-align:center;
+
+    font-size:32px;
+
+    margin-bottom:22px;
+}
+
+.bottom-info ul{
+
+    margin:0;
+
+    padding-left:22px;
+}
+
+.bottom-info li{
+
+    margin-bottom:15px;
+
+    font-size:15px;
+}
+
+/*================ AI SECTION ================*/
+
+.ai{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:55px 22px;
+
+    gap:35px;
+
+    height:auto;
+}
+
+.ai img{
+
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:20px;
+}
+
+.bottom-section{
+
+    width:100%;
+
+    padding:0;
+
+    text-align:center;
+}
+
+.bottom-section h2{
+
+    font-size:32px;
+
+    margin-bottom:22px;
+}
+
+.bottom-section p{
+
+    font-size:15px;
+
+    line-height:1.9;
+}
+
+/*================ CTA ================*/
+
+.call{
+
+    padding:55px 20px;
+
+    height:auto;
+}
+
+.call-bottom{
+
+    width:100%;
+
+    height:auto;
+
+    padding:45px 22px;
+
+    border-radius:18px;
+}
+
+.call-bottom h2{
+
+    font-size:30px;
+
+    text-align:center;
+}
+
+.call-contact{
+
+    width:100%;
+
+    margin-top:28px;
+
+    height:58px;
+
+    border-radius:6px;
+}
+
+/*================ WHATSAPP ================*/
+
+.whatsapp-float{
+
+    right:18px;
+
+    bottom:18px;
+
+    padding:14px;
+
+    border-radius:50%;
+}
+
+.wa-text{
+
+    display:none;
+}
+
+.whatsapp-float i{
+
+    font-size:34px;
+}
+
+/*================ FOOTER ================*/
+
+footer{
+
+    padding:40px 20px;
+}
+
+.social-icons{
+
+    gap:14px;
+}
+
+.social-icons a{
+
+    width:42px;
+
+    height:42px;
+}
+
+}
+
+@media(max-width:600px){
+
+nav{
+    height:70px;
+}
+
+.logo{
+    width:90px;
+}
+
+.menu-btn{
+    font-size:34px;
+}
+
+.mobile-menu{
+
+    padding:90px 28px 30px;
+}
+
+.mobile-menu a{
+
+    font-size:25px;
+}
+
+.mobile-drop-title{
+
+    font-size:25px;
+}
+
+.mobile-submenu a{
+
+    font-size:18px!important;
+}
+
+.txt-section h2,
+.bottom-info h2,
+.bottom-section h2{
+
+    font-size:28px;
+}
+
+.call-bottom h2{
+
+    font-size:25px;
+}
+
+}
+
+@keyframes fade{
+
+from{
+    opacity:0;
+    transform:translateY(-10px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
