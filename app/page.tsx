@@ -78,7 +78,7 @@ const fullDate = now.toLocaleDateString("en-US", {
       extraClass: "",
     },
     {
-      img: "./images/stt.jpeg",
+      img: "./images/rafidia.png",
       alt: "Street Advertising",
       content: (
         <div className="txt">
@@ -133,8 +133,7 @@ const fullDate = now.toLocaleDateString("en-US", {
     }
  
     window.addEventListener("scroll", checkReveal);
-    checkReveal(); // run once on mount (replaces dispatchEvent(new Event('scroll')))
- 
+    checkReveal(); 
     return () => {
       window.removeEventListener("scroll", checkReveal);
     };
