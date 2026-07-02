@@ -401,6 +401,7 @@ const fullDate = now.toLocaleDateString("en-US", {
  
       
       <div className="why reveal">
+        
         <img src="./images/pardo da.png" alt="Why Top Taxi" />
         <div className="bottom-info">
           <h2>Why Top-Taxi advertising</h2>
