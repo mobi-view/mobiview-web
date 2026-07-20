@@ -256,14 +256,14 @@ const fullDate = now.toLocaleDateString("en-US", {
   </div>
 
   <Link
-    href="/works"
+    href=""
     onClick={() => setMenuOpen(false)}
   >
     Works
   </Link>
 
   <Link
-    href="/careers"
+    href=""
     onClick={() => setMenuOpen(false)}
   >
     Careers

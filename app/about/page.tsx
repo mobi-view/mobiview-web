@@ -210,7 +210,7 @@ const [adsOpen, setAdsOpen] = useState(false);
       <div className="map reveal" ref={addRevealRef}>
         <video autoPlay muted loop playsInline>
           <source
-            src="/images/4beb9d1b-b828-4eda-98c1-ab7852508899_1080p_mp4_30_16-9.mp4"
+            src="/images/map.mp4"
             type="video/mp4"
           />
         </video>
