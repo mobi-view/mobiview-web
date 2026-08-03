@@ -1,0 +1,93 @@
+:root{
+    --yellow:#FFE600;
+    --black:#0A0A0A;
+    --dark:#111111;
+    --card-bg:#1A1A1A;
+    --border:#2A2A2A;
+    --text-muted:#888;
+    --Kyellow:#f7e337;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:var(--black); 
+    color:#E8E8E8;
+    overflow-x:hidden;
+    line-height:1.8;
+}
+.card{
+
+    border-radius: 24px;
+    display: grid;
+    justify-content: center;
+    width:370px;
+    height: 200px;
+    background-color:rgba(22,22,22,.95);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border:1px solid rgba(255,230,0,.15);
+
+    backdrop-filter:blur(14px);
+
+    transition:.45s ease;
+
+    cursor:pointer;
+    position: relative;
+
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-left: 5px solid #FFE600;
+}
+.card:hover{
+    border-color:#FFE600;
+
+}
+
+
+.dot{
+    margin-left: 12rem;
+    display: inline; 
+   
+
+}
+.dot i{
+    color:red;
+    padding-left: 0.5rem;
+}
+.card p{
+    font-size: x-large;
+    color: var(--Kyellow);
+}
+.location span{
+    margin-left: 0.2rem;
+}
+.card button{
+    background-color: var(--yellow);
+    color: black;
+   width: 150px;
+   height: 40px;
+   margin-left: 8rem;
+   border-radius: 5px;
+   border: none;
+   margin-top: 1rem;
+    cursor: pointer;
+}
+.left-line{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: #FFE600;
+    z-index: 2;
+}

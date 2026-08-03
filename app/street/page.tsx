@@ -44,12 +44,14 @@ export default function street(){
                 <span>Advertising</span>
                 <div className="dropdown">
                     <a href="/top">Top Car Screen</a>
-                    <a href="#">In The Street</a>
+                    <a href="#">Street Billboard </a>
                 </div>
             </li>
 
             <li>Works</li>
-            <li>Careers</li>
+
+            <li><a href="/career">Careers </a></li>
+
             <li><a href="/about">About Us</a></li>
         </ul>
     </div>
@@ -110,11 +112,11 @@ export default function street(){
 
     )}
 
-    <Link href="/works" onClick={() => setMenuOpen(false)}>
+    <Link href="" onClick={() => setMenuOpen(false)}>
         Works
     </Link>
 
-    <Link href="/careers" onClick={() => setMenuOpen(false)}>
+    <Link href="" onClick={() => setMenuOpen(false)}>
         Careers
     </Link>
 
@@ -219,7 +221,7 @@ export default function street(){
     جميع الحقوق محفوظة &copy; 2026
 
     <div className="social-icons">
-        <a href="#" target="_blank" aria-label="Facebook">
+        <a href="https://www.facebook.com/share/1JiQERZQem/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
             <i className="fab fa-facebook-f"></i>
         </a>
 
@@ -227,12 +229,12 @@ export default function street(){
             <i className="fab fa-instagram"></i>
         </a>
 
-        <a href="#" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/company/mobiviewagency/" target="_blank" aria-label="LinkedIn">
             <i className="fab fa-linkedin-in"></i>
         </a>
     </div>
 </footer>
-
+ 
 </> 
 
     );

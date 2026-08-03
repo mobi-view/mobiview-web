@@ -1,0 +1,67 @@
+:root{
+    --yellow:#FFE600;
+    --black:#0A0A0A;
+    --dark:#111111;
+    --card-bg:#1A1A1A;
+    --border:#2A2A2A;
+    --text-muted:#888;
+    --Kyellow:#f7e337;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:var(--black); 
+    color:#E8E8E8;
+    overflow-x:hidden;
+    line-height:1.8;
+}
+
+
+footer{
+    border-top:1px solid var(--border);
+    padding:32px;
+    text-align:center;
+    color:var(--text-muted);
+    font-size:.9rem;
+}
+
+footer strong{
+    color:var(--yellow);
+}
+
+.social-icons{
+    margin-top:12px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.social-icons a{
+    width:42px;
+    height:42px;
+    border:1px solid var(--Kyellow);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--yellow);
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#000;
+    color:#fff;
+    transform:translateY(-3px);
+    border-color: #000;
+}

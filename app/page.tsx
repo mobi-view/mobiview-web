@@ -169,11 +169,13 @@ const fullDate = now.toLocaleDateString("en-US", {
               <span>Advertising</span>
               <div className="dropdown">
                 <a href="/top">Top Car Screen</a>
-                <a href="/street">In The Street</a>
+                <a href="/street">Street Billboard</a>
               </div>
             </li>
-            <li>Works</li>
-            <li>Careers</li>
+            <li><a href="">Works</a></li>
+
+            <li><a href="/career">Careers </a></li>
+            
             <li>
               <a href="/about">About Us</a>
             </li>
@@ -263,7 +265,7 @@ const fullDate = now.toLocaleDateString("en-US", {
   </Link>
 
   <Link
-    href=""
+    href="/career"
     onClick={() => setMenuOpen(false)}
   >
     Careers
@@ -444,7 +446,7 @@ const fullDate = now.toLocaleDateString("en-US", {
       <footer>
         <strong>MobiView</strong> — Advertising Agency | جميع الحقوق محفوظة © 2026
         <div className="social-icons">
-          <a href="#" target="_blank" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/1JiQERZQem/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
             <i className="fab fa-facebook-f" />
           </a>
           <a
@@ -454,9 +456,10 @@ const fullDate = now.toLocaleDateString("en-US", {
           >
             <i className="fab fa-instagram" />
           </a>
-          <a href="#" target="_blank" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/mobiviewagency/" target="_blank" aria-label="LinkedIn">
             <i className="fab fa-linkedin-in" />
           </a>
+
         </div>
       </footer>
     </>

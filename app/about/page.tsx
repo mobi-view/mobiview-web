@@ -68,12 +68,14 @@ const [adsOpen, setAdsOpen] = useState(false);
               <span>Advertising</span>
               <div className="dropdown">
                 <a href="/top">Top Car Screen</a>
-                <a href="/street">In The Street</a>
+                <a href="/street">Street Billboard</a>
               </div>
             </li>
 
             <li>Works</li>
-            <li>Careers</li>
+
+            <li><a href="/career">Careers </a></li>
+
             <li>
               <Link href="#">About Us</Link>
             </li>
@@ -121,8 +123,8 @@ const [adsOpen, setAdsOpen] = useState(false);
         </div>
     )}
 
-    <Link href="/works">Works</Link>
-    <Link href="/careers">Careers</Link>
+    <Link href="">Works</Link>
+    <Link href="">Careers</Link>
     <Link href="/about">About Us</Link>
 
     <a className="mobile-contact">
@@ -223,7 +225,7 @@ const [adsOpen, setAdsOpen] = useState(false);
         </span>
 
         <div className="social-icons">
-          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/1JiQERZQem/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             {/* Font Awesome loaded via CDN in layout, or swap with react-icons */}
             <i className="fab fa-facebook-f" />
           </a>
@@ -235,7 +237,7 @@ const [adsOpen, setAdsOpen] = useState(false);
           >
             <i className="fab fa-instagram" />
           </a>
-          <a href="https://www.instagram.com/mobiview_agency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/mobiviewagency/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i className="fab fa-linkedin-in" />
           </a>
         </div>
