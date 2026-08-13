@@ -48,7 +48,7 @@ export default function top(){
                 </div>
             </li>
 
-            <li>Works</li>
+           
 
              <li><a href="/career">Careers </a></li>
 
@@ -106,21 +106,16 @@ export default function top(){
                 href="/street"
                 onClick={() => setMenuOpen(false)}
             >
-                In The Street
+                Street Billboard
             </Link>
 
         </div>
     )}
 
-    <Link
-        href=""
-        onClick={() => setMenuOpen(false)}
-    >
-        Works
-    </Link>
+    
 
     <Link
-        href=""
+        href="/career"
         onClick={() => setMenuOpen(false)}
     >
         Careers

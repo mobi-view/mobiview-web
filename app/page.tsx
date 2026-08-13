@@ -172,7 +172,8 @@ const fullDate = now.toLocaleDateString("en-US", {
                 <a href="/street">Street Billboard</a>
               </div>
             </li>
-            <li><a href="">Works</a></li>
+            
+          
 
             <li><a href="/career">Careers </a></li>
             
@@ -252,17 +253,12 @@ const fullDate = now.toLocaleDateString("en-US", {
       href="/street"
       onClick={() => setMenuOpen(false)}
     >
-      In The Street
+      Street Billboard
     </Link>
 
   </div>
 
-  <Link
-    href=""
-    onClick={() => setMenuOpen(false)}
-  >
-    Works
-  </Link>
+ 
 
   <Link
     href="/career"

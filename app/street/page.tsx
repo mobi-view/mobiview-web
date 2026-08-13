@@ -48,7 +48,7 @@ export default function street(){
                 </div>
             </li>
 
-            <li>Works</li>
+           
 
             <li><a href="/career">Careers </a></li>
 
@@ -105,18 +105,15 @@ export default function street(){
                 href="/street"
                 onClick={() => setMenuOpen(false)}
             >
-                In The Street
+               Street Billboard
             </Link>
 
         </div>
 
     )}
 
-    <Link href="" onClick={() => setMenuOpen(false)}>
-        Works
-    </Link>
 
-    <Link href="" onClick={() => setMenuOpen(false)}>
+    <Link href="/career" onClick={() => setMenuOpen(false)}>
         Careers
     </Link>
 

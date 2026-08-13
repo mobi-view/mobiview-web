@@ -72,7 +72,7 @@ const [adsOpen, setAdsOpen] = useState(false);
               </div>
             </li>
 
-            <li>Works</li>
+          
 
             <li><a href="/career">Careers </a></li>
 
@@ -119,12 +119,13 @@ const [adsOpen, setAdsOpen] = useState(false);
     {adsOpen && (
         <div className="mobile-submenu">
             <Link href="/top">Top Car Screen</Link>
-            <Link href="/street">In The Street</Link>
+            <Link href="/street">Street Billboard</Link>
         </div>
     )}
 
-    <Link href="">Works</Link>
-    <Link href="">Careers</Link>
+    
+
+    <Link href="/career">Careers</Link>
     <Link href="/about">About Us</Link>
 
     <a className="mobile-contact">
@@ -139,7 +140,7 @@ const [adsOpen, setAdsOpen] = useState(false);
         <h2 className="us">About Us</h2>
         <div className="about-grid">
 
-          {/* Left column */}
+       
           <div>
             <p>
               Mobiview is a company specialized in smart outdoor digital advertising
